@@ -1,8 +1,8 @@
 {
-  "name": "@dannguyen-kms/git-npm",
+  "name": "@dannguyen-kms/repo2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dannguyen-kms/git-npm.git"
+    "url": "https://github.com/dannguyen-kms/repo2.git"
   },
   "version": "1.0.6",
   "description": "",
