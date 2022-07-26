@@ -23,6 +23,6 @@
   "author": "FightLightDiamond",
   "license": "ISC",
   "publishConfig": {
-    "registry": "https://github.com/hieudan26/test-git-npm.git"
+    "registry": "https://npm.pkg.github.com/hieudan26/test-git-npm.git"
   }
 }
