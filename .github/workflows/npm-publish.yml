@@ -25,9 +25,15 @@ jobs:
           cat ${NPM_CONFIG_USERCONFIG}
         working-directory: ./open-api
 
-      - name: Update version 
+      - name: Update version  
         run: |- 
-          export VERSION=$(npm info @hieudan26/demo version)
+          VERSION=$(  info @hieudan26/demo version)
+          if [ $? -eq 0 ]
+          then
+            echo "SUCCESS"
+          else
+            echo "FAIL"
+          fi
           echo $VERSION
           NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
           echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
