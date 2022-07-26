@@ -26,6 +26,7 @@ jobs:
         run: |-   
           echo "@hieudan26:registry=https://npm.pkg.github.com" > ./.npmrc;
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ${NPM_CONFIG_USERCONFIG};
+          npm ci
         working-directory: ./open-api
 
       - name: Update version 
