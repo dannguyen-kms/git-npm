@@ -18,7 +18,7 @@ jobs:
       #   run: npm install && npm run build
       - name: Publish package on NPM 📦 
         run: |-  
-          node -p "JSON.stringify({...require('./package.json'), repository : {type: 'git',url: 'https://github.com/dannguyen-kms/repo2-test.git'}})" > package.json
+          node -p "JSON.stringify({...require('./package.json'), \"repository\" : {\"type\": \"git\",\"url\": \"https://github.com/dannguyen-kms/repo2-test.git\"}})" > package.json
           mkdir build
           echo package.json
           echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
