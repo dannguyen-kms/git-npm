@@ -1,8 +1,5 @@
 {
   "name": "@dannguyen-kms/git-npm",
-  "publishConfig": {
-    "registry": "https://github.com/dannguyen-kms/repo2-test.git"
-  },
   "version": "1.0.10",
   "description": "",
   "main": "index.js",
