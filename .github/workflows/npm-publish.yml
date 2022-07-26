@@ -27,6 +27,13 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ${NPM_CONFIG_USERCONFIG};
         working-directory: ./open-api
 
+      - name: Update version 
+        run: |- 
+          VERSION = jq -r '.version' ./package.json
+          echo $VERSION| cut -d"." -f3
+          echo $VERSION| awk -F"." '{print $3}' 
+        working-directory: ./open-api
+
       - name: Publish package on NPM 📦   
         run: |-  
           npm info express version  
