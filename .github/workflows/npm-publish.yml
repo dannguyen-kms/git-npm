@@ -23,6 +23,7 @@ jobs:
           mkdir build
           echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
           echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
-          npm publish 
+          npm publish
+        working-directory: ./open-api
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
