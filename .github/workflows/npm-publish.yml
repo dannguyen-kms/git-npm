@@ -16,7 +16,7 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
 
-      - name: Publish package on NPM 📦  
+      - name: Publish package on NPM 📦   
         run: |-  
           sudo apt-get install jq
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"}}' package.json)" > package.json
