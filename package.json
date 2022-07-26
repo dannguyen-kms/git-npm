@@ -1,9 +1,5 @@
 {
   "name": "repo2",
-  // "repository": {
-  //   "type": "git",
-  //   "url": "https://github.com/dannguyen-kms/repo2.git"
-  // },
   "version": "1.0.6",
   "description": "",
   "main": "index.js",
