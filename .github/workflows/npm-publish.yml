@@ -27,6 +27,7 @@ jobs:
 
       - name: Update version 
         run: |- 
+          export npm info @hieudan26/demo version
           VERSION=$(npm info @hieudan26/demo version)
           if [ $? -eq 1 ]
           then
