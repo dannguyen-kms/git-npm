@@ -32,9 +32,8 @@ jobs:
         run: |- 
           VERSION=$(jq -r '.version' ./package.json)
           echo $VERSION
-          echo $VERSION| cut -d"." -f3
           NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          echo $NEXTVERSION
+          jq '.version = $NEXTVERSION' file.json
         working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
