@@ -20,9 +20,6 @@ jobs:
         run: |-  
           sudo apt-get install jq
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/dannguyen-kms/repo2-test"}}' package.json)" > package.json
-          mkdir build
-          # echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
-          # echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
           npm publish
         working-directory: ./open-api
         env:
