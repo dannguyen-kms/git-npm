@@ -30,7 +30,7 @@ jobs:
       - name: Publish package on NPM 📦   
         run: |-  
           sudo apt-get install jq
-          echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"},"registry": "https://npm.pkg.github.com/@hieudan26"}' package.json)" > package.json
+          echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"}}' package.json)" > package.json
           npm publish
         working-directory: ./open-api
         env:
