@@ -33,7 +33,7 @@ jobs:
           VERSION=$(npm info express version)
           echo $VERSION
           NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json
+          echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)
           cat ./package.json
         working-directory: ./open-api
 
