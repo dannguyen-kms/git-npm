@@ -1,7 +1,7 @@
 {
   "name": "@dannguyen-kms/git-npm",
-  "repository": {
-    "url": "https://github.com/dannguyen-kms/repo2-test.git"
+  "publishConfig": {
+    "registry": "https://github.com/dannguyen-kms/repo2-test.git"
   },
   "version": "1.0.11",
   "description": "",
