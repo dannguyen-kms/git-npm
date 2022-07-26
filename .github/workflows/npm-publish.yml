@@ -33,10 +33,10 @@ jobs:
           
           VERSION=$(npm info @hieudan26/test-git-npm version --registry=https://npm.pkg.github.com)
           echo $VERSION
-          NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
-          cat ./package.json
-        working-directory: ./open-api
+          # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
+          # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
+          # cat ./package.json
+        
 
       - name: Publish package on NPM 📦   
         run: |-    
