@@ -27,19 +27,14 @@ jobs:
 
       - name: Update version 
         run: |- 
-          checkExist= export $(npm info npm-git version)
-          echo "======"
-          echo $checkExist
-          if [ [ $checkExist == *"ERR!"* ]]; 
-          then
-          VERSION="0.0.0";echo "faile";
-          else
-          echo "faile";
-          # VERSION=$(npm info @hieudan26/demo version);
-          fi;
-          # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
-          # cat ./package.json
+          { 
+            VERSION=npm info npm-git version
+          } || { 
+            VERSION="0.0.0";
+          }
+          NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
+          echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
+          cat ./package.json
         working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
