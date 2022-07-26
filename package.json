@@ -1,5 +1,9 @@
 {
-  "name": "@dannguyen-kms/repo2",
+  "name": "@dannguyen-kms/git-npm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octocat/repo2.git"
+  },
   "version": "1.0.6",
   "description": "",
   "main": "index.js",
