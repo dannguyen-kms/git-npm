@@ -35,7 +35,6 @@ jobs:
           NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
           echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
           cat ./package.json
-        working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
         run: |-  
