@@ -28,8 +28,8 @@ jobs:
       - name: Update version 
         run: |- 
           { 
-            VERSION=npm info npm-git version;
-             echo "success";
+            VERSION=npm info @hieudan26/demo version;
+            echo "success";
           } || { 
             VERSION="0.0.0";
             echo "fail";
