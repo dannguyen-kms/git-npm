@@ -16,6 +16,17 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
 
+      - name: Create build folder  
+        run: |-  
+          mkdir build
+        working-directory: ./$SOURCE_DI
+          
+      - name: Add auth key into .npmrc file  
+        run: |-   
+          echo @hieudan26:https://npm.pkg.github.com/ > build/.npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
+        working-directory: ./$SOURCE_DI
+
       - name: Publish package on NPM 📦   
         run: |-  
           sudo apt-get install jq
