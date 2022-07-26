@@ -30,7 +30,7 @@ jobs:
 
       - name: Update version  
         run: |- 
-          VERSION=$(npm info hieudan26/test-git-npm version)
+          VERSION=$(npm info @hieudan26/test-git-npm version --registry=https://npm.pkg.github.com)
           echo $VERSION
           NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
           echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
@@ -38,8 +38,7 @@ jobs:
         working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
-        run: |-  
-          npm info express version  
+        run: |-    
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"}}' package.json)" > package.json
           npm publish
         working-directory: ./open-api
