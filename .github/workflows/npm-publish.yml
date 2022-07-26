@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - 'main'
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NODE_KEY_2 }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +21,7 @@ jobs:
       - name: Add auth key into .npmrc file  
         run: |-   
           echo "@hieudan26:registry=https://npm.pkg.github.com" > ./.npmrc;
-          echo "//npm.pkg.github.com/:_authToken=${${{ secrets.NODE_KEY_2 }}}" >> ${NPM_CONFIG_USERCONFIG};
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ${NPM_CONFIG_USERCONFIG};
           cat ${NPM_CONFIG_USERCONFIG}
         working-directory: ./open-api
 
@@ -38,5 +40,4 @@ jobs:
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"}}' package.json)" > package.json
           npm publish
         working-directory: ./open-api
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_KEY_2 }}
+        
