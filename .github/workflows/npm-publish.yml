@@ -17,7 +17,8 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Create build folder  
-        run: |-  
+        run: |-
+          sudo apt-get install jq  
           mkdir build
         working-directory: ./open-api
           
@@ -37,7 +38,6 @@ jobs:
       - name: Publish package on NPM 📦   
         run: |-  
           npm info express version  
-          sudo apt-get install jq
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"}}' package.json)" > package.json
           npm publish
         working-directory: ./open-api
