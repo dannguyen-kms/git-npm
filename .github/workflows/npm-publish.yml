@@ -18,6 +18,7 @@ jobs:
       #   run: npm install && npm run build
       - name: Publish package on NPM 📦 
         run: |- 
+          npm ci
           npm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
