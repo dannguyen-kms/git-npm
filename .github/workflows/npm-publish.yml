@@ -30,13 +30,14 @@ jobs:
           checkExist=$(export $(npm info @hieudan26/demo version))
           if [ [ $checkExist == *"ERR!"* ]]; 
           then
-          VERSION="0.0.0";
+          VERSION="0.0.0";echo "faile";
           else
-          VERSION=$(npm info @hieudan26/demo version);
+          echo "faile";
+          # VERSION=$(npm info @hieudan26/demo version);
           fi;
-          NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
-          cat ./package.json
+          # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
+          # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
+          # cat ./package.json
         working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
