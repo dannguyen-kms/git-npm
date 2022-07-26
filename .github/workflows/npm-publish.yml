@@ -30,7 +30,8 @@ jobs:
 
       - name: Update version 
         run: |- 
-          jq -r '.version' ./package.json
+          VERSION=$(echo jq -r '.version' ./package.json)
+          echo $VERSION
         working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
