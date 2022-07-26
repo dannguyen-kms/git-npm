@@ -21,5 +21,8 @@
     "FightLightDiamond"
   ],
   "author": "FightLightDiamond",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://github.com/hieudan26/test-git-npm.git"
+  }
 }
