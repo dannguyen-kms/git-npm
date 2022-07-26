@@ -18,8 +18,9 @@ jobs:
       #   run: npm install && npm run build
       - name: Publish package on NPM 📦 
         run: |- 
+          mkdir build
           echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
           npm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
