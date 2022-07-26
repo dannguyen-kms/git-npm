@@ -2,7 +2,7 @@
   "name": "@dannguyen-kms/git-npm",
   "repository": {
     "type": "git",
-    "url": "https://github.com/octocat/repo2.git"
+    "url": "https://github.com/dannguyen-kms/repo2.git"
   },
   "version": "1.0.9",
   "description": "",
