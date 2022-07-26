@@ -21,10 +21,8 @@ jobs:
           node > out_${jsonFile} <<EOF
           //Read data
           var data = require('./package.json');
-          data.repository.type = "git";
-          data.repository.url = "https://github.com/dannguyen-kms/repo2-test.git";
+          data.repository= {type: "git",url: "https://github.com/dannguyen-kms/repo2-test.git"};
           EOF
-          
           mkdir build
           echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
           echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
