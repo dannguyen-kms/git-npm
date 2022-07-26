@@ -25,20 +25,21 @@ jobs:
       - name: Add auth key into .npmrc file  
         run: |-   
           echo "@hieudan26:registry=https://npm.pkg.github.com" > ./.npmrc;
-          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ${NPM_CONFIG_USERCONFIG};
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ${NPM_CONFIG_USERCONFIG};
         working-directory: ./open-api
 
-      # - name: Update version  
-      #   run: |- 
-      #     # npm info @hieudan26/test-git-npm version
-      #     # echo $VERSION
-      #     # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-      #     # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
-      #     # cat ./package.json
-      #   working-directory: ./open-api
+      - name: Update version 
+        run: |- 
+          VERSION=$(npm info git-npm version)
+          echo $VERSION
+          NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
+          echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
+          cat ./package.json
+        working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
-        run: |-    
+        run: |-  
+          npm info express version  
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/hieudan26/test-git-npm"}}' package.json)" > package.json
           npm publish
         working-directory: ./open-api
