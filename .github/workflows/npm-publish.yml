@@ -25,7 +25,7 @@ jobs:
           cat ${NPM_CONFIG_USERCONFIG}
         working-directory: ./open-api
 
-      - name: Update version 
+      - name: Update version  
         run: |- 
           { 
             VERSION=$(npm info @hieudan26/demo version);
