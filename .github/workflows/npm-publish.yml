@@ -29,7 +29,7 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ${NPM_CONFIG_USERCONFIG};
         working-directory: ./open-api
 
-      - name: Update version 
+      - name: Update version  
         run: |- 
           VERSION=$(npm info @hieudan26/test-git-npm version)
           echo $VERSION
