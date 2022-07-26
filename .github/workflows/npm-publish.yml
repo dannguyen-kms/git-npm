@@ -18,7 +18,7 @@ jobs:
       #   run: npm install && npm run build
       - name: Publish package on NPM 📦 
         run: |-  
-          sudo apt-get install install jq
+          sudo apt-get install jq
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/octocat/my-other-repo.git"}}' package.json)" > package.json
           mkdir build
           echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
