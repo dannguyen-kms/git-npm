@@ -27,7 +27,7 @@ jobs:
 
       - name: Update version 
         run: |- 
-          checkExist=$(export $(npm info npm-git version))
+          checkExist= export $(npm info npm-git version)
           echo "======"
           echo $checkExist
           if [ [ $checkExist == *"ERR!"* ]]; 
