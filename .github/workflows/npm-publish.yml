@@ -31,7 +31,7 @@ jobs:
       - name: Update version  
         run: |- 
           
-          VERSION=$(npm info @hieudan26/test-git-npm version --registry=https://npm.pkg.github.com)
+          VERSION=$(npm info @hieudan26/test-git-npm version)
           echo $VERSION
           # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
           # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
