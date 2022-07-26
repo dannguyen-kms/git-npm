@@ -1,10 +1,9 @@
 {
   "name": "@dannguyen-kms/git-npm",
   "repository": {
-    "type": "git",
     "url": "https://github.com/dannguyen-kms/repo2-test.git"
   },
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "bin": {
