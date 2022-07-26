@@ -28,14 +28,14 @@ jobs:
           echo "//npm.pkg.github.com/hieudan26:_authToken=${NODE_AUTH_TOKEN}" > ${NPM_CONFIG_USERCONFIG};
         working-directory: ./open-api
 
-      - name: Update version  
-        run: |- 
-          npm info @hieudan26/test-git-npm version
-          echo $VERSION
-          # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
-          # cat ./package.json
-        working-directory: ./open-api
+      # - name: Update version  
+      #   run: |- 
+      #     # npm info @hieudan26/test-git-npm version
+      #     # echo $VERSION
+      #     # NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
+      #     # echo "$(jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json)" > package.json
+      #     # cat ./package.json
+      #   working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
         run: |-    
