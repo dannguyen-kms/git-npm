@@ -26,7 +26,7 @@ jobs:
           echo @hieudan26:https://npm.pkg.github.com/ > ./.npmrc
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ./.npmrc
           cat ./.npmrc
-          npm login
+          npm login --scope=@hieudan26 --registry=https://npm.pkg.github.com
         working-directory: ./open-api
 
       - name: Publish package on NPM 📦   
