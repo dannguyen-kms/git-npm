@@ -7,22 +7,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 
         uses: actions/checkout@v3 
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-      # - name: Install dependencies and build 🔧
-      #   run: npm install && npm run build
+      - name: Install dependencies and build 🔧
+        run: npm install && npm run build
+
       - name: Publish package on NPM 📦  
         run: |-  
           sudo apt-get install jq
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/dannguyen-kms/repo2-test"}}' package.json)" > package.json
           mkdir build
-          echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
+          # echo @dannguyen-kms:https://npm.pkg.github.com/ > build/.npmrc
+          # echo '//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}' >> build/.npmrc
           npm publish
         working-directory: ./open-api
         env:
