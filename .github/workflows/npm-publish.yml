@@ -30,7 +30,7 @@ jobs:
 
       - name: Update version 
         run: |- 
-          VERSION=$(jq -r '.version' ./package.json)
+          VERSION=$(npm info express version)
           echo $VERSION
           NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
           jq --arg NEXTVERSION "$NEXTVERSION" '.version = $NEXTVERSION' ./package.json
