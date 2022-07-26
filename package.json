@@ -1,6 +1,5 @@
 {
-  "name": "@dannguyen-kms/repo2",
-
+  "name": "@dannguyen-kms/git-npm",
   "version": "1.0.6",
   "description": "",
   "main": "index.js",
