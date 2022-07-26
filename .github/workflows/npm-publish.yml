@@ -16,7 +16,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
       # - name: Install dependencies and build 🔧
       #   run: npm install && npm run build
-      - name: Publish package on NPM 📦 
+      - name: Publish package on NPM 📦  
         run: |-  
           sudo apt-get install jq
           echo "$(jq '. += {"repository": {"type": "git","url": "https://github.com/dannguyen-kms/repo2-test"}}' package.json)" > package.json
