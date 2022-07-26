@@ -28,6 +28,8 @@ jobs:
       - name: Update version 
         run: |- 
           checkExist=$(export $(npm info @hieudan26/demo version))
+          echo "======"
+          echo $checkExist
           if [ [ $checkExist == *"ERR!"* ]]; 
           then
           VERSION="0.0.0";echo "faile";
